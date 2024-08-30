@@ -3,12 +3,14 @@ package com.kgisl.sb10.service;
 import java.util.List;
  
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
  
 import com.kgisl.sb10.entity.Person;
 import com.kgisl.sb10.repository.PersonRepository;
  
 @Service
+@EnableAspectJAutoProxy
 public class PersonServiceImpl implements PersonService {
  
     @Autowired
