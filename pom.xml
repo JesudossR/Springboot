@@ -28,7 +28,10 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<sonar.organization>jesudoss-r</sonar.organization>
+  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
