@@ -27,7 +27,6 @@
 		<url/>
 	</scm>
 	<properties>
-		<!-- <java.version>21</java.version> -->
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 		<sonar.organization>jesudoss-r</sonar.organization>
@@ -61,6 +60,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>com.microsoft.playwright</groupId>
+				<artifactId>playwright</artifactId>
+				<version>1.46.0</version>
 			</dependency>
 	</dependencies>
 

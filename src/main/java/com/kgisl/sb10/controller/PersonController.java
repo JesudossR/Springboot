@@ -33,19 +33,19 @@ public class PersonController {
         this.personService=personService;
     }
  
-    @GetMapping
+    @GetMapping("/get")
     public ResponseEntity<List<Person>> getAllPersons() {
         List<Person> persons = personService.getAllPersons();
         return new ResponseEntity<>(persons, HttpStatus.OK);
     }
  
-    @PostMapping
+    @PostMapping("/post")
     public ResponseEntity<Person> createPerson(@RequestBody Person person) {
         Person createdPerson = personService.createPerson(person);
         return new ResponseEntity<>(createdPerson, HttpStatus.CREATED);
     }
  
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<Person> getPersonById(@PathVariable int id) {
         Person person = personService.getPersonById(id);
         if (id <= 0) {
@@ -54,7 +54,7 @@ public class PersonController {
         return new ResponseEntity<>(person, person != null ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
  
-    @PutMapping("/{id}")
+    @PutMapping("/put/{id}")
     public ResponseEntity<Person> updatePerson(@PathVariable int id, @RequestBody Person updatedPerson) {
         Person person = personService.updatePerson(id, updatedPerson);
         if (person == null) {
@@ -63,7 +63,7 @@ public class PersonController {
         return new ResponseEntity<>(person, HttpStatus.OK);
     }
  
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deletePerson(@PathVariable("id") int id) {
         if (personService.getPersonById(id) == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
